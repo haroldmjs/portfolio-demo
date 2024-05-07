@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+  const EXPERIENCIE = [
+    {
+      date: 'Actualmente',
+      title: 'Desarrollador web - Autonomo',
+      description: 'Diseño y desarrollo de aplicaciones, sitios web y tiendas en línea para clientes tanto nacionales como internacionales. Mi enfoque está en crear soluciones digitales que sean atractivas, funcionales y escalables.'
+    },
+    {
+      date: 'Mazo 2016',
+      title: 'Coordinador web - Constructora Conkor',
+      description: 'Lideré un equipo de dos personas en la creación de sitios web e intranets para un grupo de empresas. Utilicé principalmente HTML, CSS, JavaScript y PHP para desarrollar soluciones personalizadas que mejoraron la presencia en línea y la eficiencia operativa de la organización.'
+    }
+  ]
+---
+<ol class="relative border-s ml-2">                  
+    {
+      EXPERIENCIE.map(experiencie => {
+        return <li class="mb-10 ms-4">
+          <ExperienceItem {...experiencie} />
+        </li>
+      })
+    }
+</ol>
+

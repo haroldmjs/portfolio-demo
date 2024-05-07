@@ -1,25 +1,34 @@
 ---
 import Badge from '../components/Badge.astro';
+import Experience from '../components/Experience.astro';
+import Section from '../components/Section.astro';
 import SocialPill from '../components/SocialPill.astro';
+import Code from '../icons/Code.astro';
 import GitHub from '../icons/GitHub.astro';
 import LinkedIn from '../icons/LinkedIn.astro';
+import Mail from '../icons/Mail.astro';
+import Suitcase from '../icons/Suitcase.astro';
 import Layout from '../layouts/Layout.astro';
+import Projects from '../components/Projects.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+<Layout 
+  title="Porfolio de Harold.mjs - Desarrollador y Programador Web con 5 años de experiencia"
+  description="Contrata a Harold.mjs para crear tu aplicacion web o móvil. Desarrollador web especializado en crear aplicaciones únicas"
+  >
+	<main class="px-4">
+    <Section class="py-44 pb-24">
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6">
         Hey, soy Harold <a href="https://www.linkedin.com/in/harold-m-475653173/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></a>
       </h1>
-      <h2 class="text-2xl text-wrap">
+      <h2 class="text-xl lg:text-2xl text-wrap max-2-[700px]">
         <span>+5 años de experiencia. </span>
         <span class="text-yellow-200/90">Desarrollador Web.</span> 
         <span class="text-red-100/90">De Anzoategui, Venezuela 🇻🇪.</span> 
         <span class="opacity-75">Especializado en crear soluciones con aplicaciones únicas.</span>
       </h2>
 
-      <nav class="flex gap-x-2">
+      <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill href="https://www.linkedin.com/in/harold-m-475653173/">
           <LinkedIn class="w-6 h-6" />
           LinkedIn
@@ -28,7 +37,27 @@ import Layout from '../layouts/Layout.astro';
           <GitHub class="w-6 h-6" />
           Github
         </SocialPill>
+        <SocialPill href="mailto:contacto@haroldmjs.com">
+          <Mail class="w-6 h-6" />
+          contacto@haroldmjs.com
+        </SocialPill>
       </nav>
-    </section>
+    </Section>
+
+    <Section id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Suitcase class="size-6" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </Section>
+    
+    <Section id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Code class="size-6" />
+        Proyectos
+      </h2>
+      <Projects />
+    </Section>
 	</main>
 </Layout>
