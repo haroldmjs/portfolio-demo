@@ -1,27 +1,48 @@
 ---
+import React from '../icons/React.astro'
+import TailwindCSS from '../icons/TailwindCSS.astro'
+
+const TAGS = {
+  REACT: {
+    name: 'React',
+    class: 'bg-[#23272f] text-white',
+    icon: React
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#3f6887] text-white',
+    icon: TailwindCSS
+  }
+}
 const PROJECTS = [
   {
-    title: 'Project 1',
-    description: 'Lorem ipsum dolor sit amet, consecteuripsum dolor sit amet, consecteuripsum dolor sit amet, consecteur',
-    link: '#',
+    title: 'Brioche Delivery - Menu Digital',
+    description: 'Menú con carrito de compra, que recopila la información del usuario, calcula el delivery y genera el pedido por WhatsApp',
+    link: 'https://briochedelivery.haroldmjs.com',
     github: '#',
-    image: 'https://via.placeholder.com/300x200',
-    tags: ['HTML', 'CSS', 'JavaScript']
+    image: '/projects/brioche.webp',
+    tags: [TAGS.REACT, TAGS.TAILWIND]
   }
 ]
+
 ---
 
 {
   PROJECTS.map(({title, description, tags, image}) => (
     <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <ul>
-        {tags.map(tag=>(
-          <li>{tag}</li>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag)=>(
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-3`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
         ))}
       </ul>
-      <img src={image} alt="Captura de pantalla del proyecto" />
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt="Captura de pantalla del proyecto" />
     </article>
   ))
 }
